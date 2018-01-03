@@ -2,8 +2,8 @@
 // S3Adapter
 //
 // Stores Parse files in AWS S3.
-
-var AWS = require('aws-sdk');
+var AWSXRay = require('aws-xray-sdk');
+var AWS = AWSXRay.captureAWS(require('aws-sdk'));
 var optionsFromArguments = require('./lib/optionsFromArguments');
 
 const awsCredentialsDeprecationNotice = function awsCredentialsDeprecationNotice() {
